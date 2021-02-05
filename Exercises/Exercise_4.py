@@ -16,7 +16,7 @@ class Protein():
         r = requests.get(url)
         sequence = ""
         seq_list = []
-        protein_fasta = '../../data/' + protein_name + '.fasta'
+        protein_fasta = '../data/' + protein_name + '.fasta'
 
         with open(protein_fasta, "wb") as fasta:
             fasta.write(r.content)
@@ -55,7 +55,7 @@ class Protein():
 
 
 
-aa_df = pd.read_csv("../../data/amino_acid_properties.csv")
+aa_df = pd.read_csv("../data/amino_acid_properties.csv")
 aa_hydropathy = dict()
 aa_pI = dict()
 aa_Surface = dict()

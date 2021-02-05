@@ -2,9 +2,9 @@ from collections import Counter
 import csv
 import matplotlib.pyplot as plt
 
-human_FASTA = "uniprot-filtered-organism Homo+sapiens+(Human)+[9606] +AND+review--.fasta"
-plant_FASTA = "uniprot-filtered-organism__Arabidopsis+thaliana+(Mouse-ear+cress)+[370--.fasta"
-yeast_FASTA = "uniprot-filtered-organism Saccharomyces+cerevisiae+(strain+ATCC+204508+%2--.fasta"
+human_FASTA = "../data/uniprot-filtered-organism Homo+sapiens+(Human)+[9606] +AND+review--.fasta"
+plant_FASTA = "../data/uniprot-filtered-organism__Arabidopsis+thaliana+(Mouse-ear+cress)+[370--.fasta"
+yeast_FASTA = "../data/uniprot-filtered-organism Saccharomyces+cerevisiae+(strain+ATCC+204508+%2--.fasta"
 
 def count_AA(file, organism = ""):
     # load the fasta file
@@ -25,7 +25,7 @@ def count_AA(file, organism = ""):
     output = Counter(sequence)
 
     # save in a csv file
-    with open("AA-Count.csv", "w", newline="") as AA_Count:
+    with open("../data/AA-Count.csv", "w", newline="") as AA_Count:
         csv_writer = csv.writer(AA_Count)
         for aa in output.items():
             csv_writer.writerow(aa)

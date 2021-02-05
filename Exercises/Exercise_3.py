@@ -3,13 +3,13 @@ import pandas as pd
 from collections import deque
 import numpy as np
 
-aa_df = pd.read_csv("../../data/amino_acid_properties.csv")
+aa_df = pd.read_csv("../data/amino_acid_properties.csv")
 
 aa_hydropathy = dict()
 for pos, aa in enumerate(aa_df["1-letter code"]):
     aa_hydropathy[aa] = aa_df["hydropathy index (Kyte-Doolittle method)"][pos]
 
-with open("../../data/P32249.fasta", "r") as fasta:
+with open("../data/P32249.fasta", "r") as fasta:
     sequence_reader = fasta.readlines()
 
 to_delete = []
