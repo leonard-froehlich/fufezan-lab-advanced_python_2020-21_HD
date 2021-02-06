@@ -18,7 +18,7 @@ class Protein():
 
     def get_data(self, identifier, protein_name):
         """"Gets protein sequence from uniprot
-        Function takes the protein name and identifier to download the fasta file from uniprot and extracts the amino acid sequence from it
+        Function takes the protein name and identifier to download the fasta file from uniprot (https://www.uniprot.org) and extracts the amino acid sequence from it
 
         Args:
             identifier (str): specific identifier for the protein, e.g. P32248
@@ -74,7 +74,7 @@ class Protein():
         window = deque([], sliding_window_size)
         for value in value_list:
             window.append(value)
-            average = sum(window)/len(window)
+            average = round(sum(window)/len(window), 2)
             averaged_list.append(average)
         return averaged_list
 
