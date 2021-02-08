@@ -32,7 +32,7 @@ class Protein():
         r = requests.get(url)
         sequence = ""
         seq_list = []
-        protein_fasta = '../../data/' + protein_name + '.fasta'
+        protein_fasta = '../data/' + protein_name + '.fasta'
 
         with open(protein_fasta, "wb") as fasta:
             fasta.write(r.content)
